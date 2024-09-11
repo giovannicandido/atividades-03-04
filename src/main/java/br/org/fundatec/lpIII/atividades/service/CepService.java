@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Slf4j
 public class CepService {
-//    private final ExternalCepFactory externalCepFactory;
+    private final ExternalCepFactory externalCepFactory;
 
 
 
@@ -24,9 +24,9 @@ public class CepService {
 
 
     public Endereco searchEndereco(String cep) {
-//        return externalCepFactory.create(apiConfig)
-//                .searchByCep(cep);
-        return externalCepRestService.searchByCep(cep);
+        return externalCepFactory.create()
+                .searchByCep(cep);
+        //return externalCepRestService.searchByCep(cep);
     }
 
 }
